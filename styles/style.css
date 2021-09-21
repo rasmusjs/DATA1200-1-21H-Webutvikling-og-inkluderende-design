@@ -2,13 +2,17 @@
     --main-bg-color: linear-gradient(45deg, #e66465, #9198e5);
     --main-bg-light-color: white;
     --main-txt-color: black;
+    --assistive-border: 3px dashed #ff0000;
+    --assistive-border-helper: 3px solid transparent;
 }
 
 body {
     margin: 0;
     background-color: var(--main-bg-color);
     color: var(--main-txt-color);
-    font-family: "Comic Sans MS", "Comic Sans", cursive, sans-serif;
+    font-family: "Jost", sans-serif;
+    counter-reset: my-sec-counter;
+    /*https://www.w3schools.com/cssref/tryit.asp?filename=trycss_counter-reset*/
 }
 
 table {
@@ -17,6 +21,7 @@ table {
 }
 
 nav>ul {
+    grid-area: header;
     list-style-type: none;
     margin: 0;
     padding: 0;
@@ -26,6 +31,11 @@ nav>ul {
 
 nav>ul>li {
     float: right;
+    border: var(--assistive-border-helper);
+}
+
+nav>ul>li:hover {
+    border: var(--assistive-border);
 }
 
 nav>ul>li a img {
@@ -38,11 +48,6 @@ nav>ul>li a {
     text-align: center;
     padding: 0.875em;
     text-decoration: none;
-}
-
-.header {
-    grid-area: header;
-    margin: 2em;
 }
 
 .splash {
@@ -61,22 +66,69 @@ nav>ul>li a {
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
+    color: white;
 }
 
-.main {
+.splash>div table {
+    color: white;
+}
+
+main {
     grid-area: main;
     background-color: var(--main-bg-light-color);
     text-align: center;
 }
 
-.footer {
+.item {
+    display: grid;
+    grid-template-areas: 'image text';
+    grid-template-columns: 1fr;
+    grid-template-rows: auto 1fr auto;
+    padding: 10px;
+    margin: auto;
+    width: 50%;
+    border: var(--assistive-border-helper);
+}
+
+.item::before {
+    /* Increment "my-sec-counter" by 1 */
+    counter-increment: my-sec-counter;
+    content: "Item number #" counter(my-sec-counter) ". ";
+}
+
+.item:focus,
+.item:hover {
+    border: var(--assistive-border);
+}
+
+.item>.image {
+    grid-area: image;
+}
+
+.item>.image>img {
+    width: 140px;
+    height: 120;
+}
+
+.item>.text {
+    grid-area: text;
+    text-align: left;
+    padding-left: 1em;
+    width: 48em;
+}
+
+.item>.text>h2 {
+    line-height: 0;
+}
+
+footer {
     grid-area: footer;
     text-align: center;
     background: var(--main-bg-color);
     width: 100%;
 }
 
-.footer p {
+footer p {
     font-size: 1em;
 }
 
