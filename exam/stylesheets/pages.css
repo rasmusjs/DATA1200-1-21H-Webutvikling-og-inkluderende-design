@@ -1,0 +1,67 @@
+main > article {
+    padding: 2rem 5rem 7rem;
+    margin-bottom: 1rem;
+    border-radius: 5px;
+    background-color: var(--lighttext);
+    outline: 1px solid var(--themecolor);
+}
+h2 {
+    font-size: 1.8rem;
+    padding: 1rem 0;
+}
+main > article > div {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    max-width: 80ch;
+    margin: 0 auto;
+}
+main > article > div > h3 {
+    align-self: flex-start;
+}
+main > article > div > p > a {
+    color: var(--themecolor);
+    text-decoration: underline;
+    font-weight: bold;
+}
+cite {
+    font-style: italic;
+}
+.tip {
+    text-decoration: 1px underline dotted var(--themecolor);
+}
+strong {
+    font-weight: bold;
+}
+figure {
+    display: table;
+    font-size: 0.8rem;
+    margin-top: 1.5rem;
+}
+figure > img {
+    max-width: 100%;
+}
+figcaption {
+    display: table-caption;
+    caption-side: bottom;
+    margin-top: 0;
+}
+main>article>div>h2+p::first-letter {
+    background-color: var(--lightcolor);
+    font-size: 3rem;
+    padding: 0px 5px;
+    margin-right: 0.2rem;
+    float: left;
+    font-family: Copperplate, fantasy;
+}
+
+/*Rsponsive adjustment*/
+
+@media screen and (max-width: 600px) {
+    main > article {
+        padding: 3rem 3rem;
+        border-radius: 0;
+    }
+}
+
+

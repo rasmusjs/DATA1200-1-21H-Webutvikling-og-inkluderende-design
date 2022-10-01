@@ -1,0 +1,43 @@
+section {
+    text-align: center;
+}
+h2 {
+    margin-top: 2rem;
+    font-size: 1.8rem;
+}
+p {
+    margin: 0 auto;
+}
+.fakephone {
+    /* 
+    Max width specified to prevent the page within the iframe
+    from exceeding 600px width and loading a desktop layout. 
+    */
+    max-width: 805px;
+    margin: auto;
+}
+.iframe-container {
+    position: relative;
+    overflow: hidden;
+
+    /* calculate aspect ratio from mobile screen size: */
+    padding-top: calc(1278 / 720 * 100%);
+}
+.iframe-container img {
+    position: absolute;
+    z-index: 1;
+    top: 0;
+    left:0%;
+    width: 100%;
+    height:100%;
+    pointer-events: none;
+}
+.iframe-container iframe {
+    position: absolute;
+    overflow: hidden;
+    top: 15.2%;
+    left:14%;
+    width: 74.5%;
+    height:72.7%;
+    border: 0;
+}

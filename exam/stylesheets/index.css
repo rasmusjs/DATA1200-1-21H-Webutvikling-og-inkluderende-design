@@ -1,0 +1,68 @@
+main>a>article {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-gap: 5rem;
+    padding: 1rem 5rem;
+    margin-bottom: 2rem;
+    border-radius: 5px;
+    background-color: var(--lighttext);
+    color: var(--darktext);
+    outline: 1px solid var(--themecolor);
+}
+main>a:nth-child(odd)>article {
+    background-color: var(--themecolor);
+    color: var(--lighttext);
+    outline: 1px solid var(--themecolor);
+}
+main>a>article:hover,
+main>a>article:focus {
+    transform: scale(1.04);
+    transition: ease-in-out 0.2s;
+}
+main>a>article>img {
+    width: 60%;
+    align-self: center;
+    justify-self: center;
+}
+
+/*Responsive adjustments*/
+@media screen and (max-width: 1600px) {
+    main > a > article {
+        grid-gap: 2rem;
+        padding: 1rem 2rem;
+    }
+    main>a>article>img {
+        width: 80%;
+    }
+}
+@media screen and (max-width: 768px) {
+    main > a > article {
+        grid-gap: 1rem;
+    }
+}
+
+@media screen and (max-width: 600px) {
+    main>a>article {
+        grid-template-areas: " imgtop ";
+        border-radius: 0px;
+        outline: none;
+        grid-template-columns: 1fr;
+        grid-template-rows: repeat(2, 1fr);
+        grid-gap: 0;
+        padding: 1rem 3rem 2rem;
+        box-sizing: border-box;
+        width: var(--contentwidth);
+        max-width: 100%;
+    }
+    main>a:nth-child(odd)>article {
+        outline: none;
+    }
+    .imgtop {
+        grid-area: imgtop;
+    }
+    main>a>article:hover,
+    main>a>article:focus {
+        transform: none;
+        transition: none;
+    }
+}

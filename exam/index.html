@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Final Assignment</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="stylesheets/global.css">
+    <link rel="stylesheet" href="stylesheets/index.css">
+    <link rel="stylesheet" href="icons/fontawesome-free-5.15.4-web/css/all.css">
+</head>
+
+<body>
+    <header>
+        <nav>
+            <!--mobile navigation-->
+            <button id="mobilenavigation">
+                <em class="fas fa-bars" id="opendropdown"></em>
+                <em class="fas fa-times" id="closedropdown"></em>
+                <ul id="dropdownitems" style="display: none;">
+                    <li><a href="reflection.html">Reflection</a></li>
+                    <li><a href="accessibility.html">Accesibility</a></li>
+                    <li><a href="topical.html">Topical</a></li>
+                    <li><a href="funpage.html">Fun Page</a></li>
+                </ul>
+            </button>
+            <!--end mobile navigation-->
+            <h1><a href="index.html">Final Assignment</a></h1>
+            <ul>
+                <li><a href="reflection.html"><em class="fas fa-file-alt" aria-hidden="true"></em>Reflection</a></li>
+                <li><a href="accessibility.html"><em class="fas fa-universal-access"
+                            aria-hidden="true"></em>Accesibility</a></li>
+                <li><a href="topical.html"><em class="fas fa-info-circle" aria-hidden="true"></em>Topical</a></li>
+                <li><a href="funpage.html"><em class="fas fa-carrot" aria-hidden="true"></em>Fun Page</a></li>
+            </ul>
+        </nav>
+    </header>
+    <section class="hero">
+        <img src="img/indexhero.svg" alt="Illustration of HTML and CSS markup in synergy" aria-hidden="true">
+        <h1>DATA1200 - Webutvikling og Inkluderende Design</h1>
+    </section>
+    <main>
+        <a href="reflection.html" tabindex="-1">
+            <article tabindex="0">
+                <img src="img/reflection.svg" alt="Illustration of a person reflecting" aria-hidden="true">
+                <div>
+                    <h2>Reflection-essay</h2>
+                    <p>This page must contain a short text (500-700 words) describing the challenges experienced by the
+                        (one, several or all) members of the group when transitioning from upper-secondary school (or
+                        work-life) to university. Reflect on any
+                        of the following topics:<br><br> a) learning to code, or<br> b) being a student rather than a
+                        pupil, or<br> c) managing the workload.</p>
+                </div>
+            </article>
+        </a>
+        <a href="accessibility.html" tabindex="-1">
+            <article tabindex="0">
+                <div>
+                    <h2>Accessibility</h2>
+                    <p>It must contain a short presentation of accessibility (up to 500 words describing how the group
+                        tested the code for accessibility using an automated test. Also explain how you checked,
+                        validated, and made coding-choices for universal
+                        design beyond what an automated test can do. You are welcome to use screenshots from the testing
+                        site and of your code. We shall read this text! While the content of your page is but a minor
+                        part of the assessment, this is the
+                        text that we are certain to read. (Grammar not important.)</p>
+                </div>
+                <img class="imgtop" src="img/accessibility.svg"
+                    alt="Illustration of universal accessibility in web-applications" aria-hidden="true">
+            </article>
+        </a>
+        <a href="topical.html" tabindex="-1">
+            <article tabindex="0">
+                <img src="img/topical.svg" alt="Illustration of topics, represented by a hash-tag" aria-hidden="true">
+                <div>
+                    <h2>Topical Information</h2>
+                    <p>Technology and society (with external links): Write – or re-use a short text you have previously
+                        written – (anywhere from 300 to 1000 words) about technology and society. You are allowed to
+                        reuse text from "DATA1100 Technology and
+                        Society for Programmers" or other subjects. This text should have multiple links to external
+                        sites with relevant information. We shall not grade you on how relevant the information you link
+                        to is, but we expect several links and
+                        we expect it to be easy to understand before clicking what information you lead us to.</p>
+                </div>
+            </article>
+        </a>
+        <a href="funpage.html" tabindex="-1">
+            <article tabindex="0">
+                <div>
+                    <h2>Fun Page</h2>
+                    <p>Make one page that is in a different layout and have a different styling than the others. Put in
+                        some text and images. We accept place-holder text, but don’t use copyrighted images. Or you can
+                        present an activity or a place in Oslo.
+                        <br><br> This page is an opportunity to be creative and shine. You may embed video or sound, but
+                        again: beware of copyright, please! Don’t forget to consider the size of the media files (videos
+                        or pictures).
+                    </p>
+                </div>
+                <img class="imgtop" src="img/funpage.svg" alt="Illustration of games and media" aria-hidden="true">
+            </article>
+        </a>
+    </main>
+    <footer>
+        <p>Made with ❤︎ by studenter TKD</p>
+        <p>&copy; Copyright (2021)</p>
+    </footer>
+    <!--mobile navigation script-->
+    <script>
+        const targetDiv = document.getElementById("dropdownitems");
+        const targetIconOpen = document.getElementById("opendropdown");
+        const targetIconClose = document.getElementById("closedropdown");
+        const btn = document.getElementById("mobilenavigation");
+        btn.onclick = function () {
+            if (targetDiv.style.display !== "none") {
+                targetDiv.style.display = "none";
+                targetIconOpen.style.display = "inline";
+                targetIconClose.style.display = "none";
+            } else {
+                targetDiv.style.display = "block";
+                targetIconOpen.style.display = "none";
+                targetIconClose.style.display = "inline";
+            }
+        };
+    </script>
+    <!--end script-->
+</body>
+
+</html>

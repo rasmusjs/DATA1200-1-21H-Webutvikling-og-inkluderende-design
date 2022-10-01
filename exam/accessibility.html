@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Final Assignment</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="stylesheets/global.css">
+    <link rel="stylesheet" href="stylesheets/pages.css">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+</head>
+
+<body>
+    <header>
+        <nav>
+            <!--mobile navigation-->
+            <button id="mobilenavigation">
+                <em class="fas fa-bars" id="opendropdown"></em>
+                <em class="fas fa-times" id="closedropdown"></em>
+                <ul id="dropdownitems" style="display: none;">
+                    <li><a href="reflection.html">Reflection</a></li>
+                    <li><a href="accessibility.html">Accesibility</a></li>
+                    <li><a href="topical.html">Topical</a></li>
+                    <li><a href="funpage.html">Fun Page</a></li>
+                </ul>
+            </button>
+            <!--end mobile navigation-->
+            <h1><a href="index.html">Final Assignment</a></h1>
+            <ul>
+                <li><a href="reflection.html"><em class="fas fa-file-alt" aria-hidden="true"></em>Reflection</a></li>
+                <li><a href="accessibility.html"><em class="fas fa-universal-access"
+                            aria-hidden="true"></em>Accesibility</a></li>
+                <li><a href="topical.html"><em class="fas fa-info-circle" aria-hidden="true"></em>Topical</a></li>
+                <li><a href="funpage.html"><em class="fas fa-carrot" aria-hidden="true"></em>Fun Page</a></li>
+            </ul>
+        </nav>
+    </header>
+    <section class="hero" aria-hidden="true">
+        <img src="img/accessibility.svg" alt="Illustration of accessibility in mind.">
+    </section>
+    <main>
+        <article>
+            <div>
+                <h2>Accessibility Evaluation</h2>
+                <p>We have designed this website with accessibility in mind. We have used best practice semantics in the
+                    html code hierarchy. Instead of divs we used the new types of elements like "header", "nav", "main"
+                    and "footer" for the layout, while
+                    "section" and "article" elements are used for content. This makes it easy for screen readers as well
+                    as search engines to understand the contents of the page. Because we had this in mind from the very
+                    start, the website passed accessibility
+                    checks without necessary revision. The site contains several images that serve no other purpose than
+                    visual design, and these are hidden from screen readers with “aria-hidden”. We have used “tabindex”
+                    and “:focus” to enable tab navigation
+                    that gives the same visual feedback on focus as on hover. We have checked the page for
+                    color-blindness accessibility on toptal.com and detected no issues and checked contrast and text
+                    size on webaim.com and passed AAA.
+                </p>
+                <figure aria-hidden="true">
+                    <img src="img/AccessibilityExample.png"
+                        alt="Screenshot of the website code that shows examples of 'aria-hidden' and 'tabindex'.">
+                    <figcaption>
+                        Screenshot of the code that shows examples of 'aria-hidden' and 'tabindex'.
+                    </figcaption>
+                </figure>
+                <p>The website is mainly in English and the universal language is therefore specified in the html tag as
+                    "lang=en". There are some texts which are in Norwegian and those articles are specified as
+                    "lang=no". This is in accordance with WCAG
+                    guidlines for language. There are no keyboard traps on the site because the page is fairly simple
+                    without forms or input. There is no playable media or animations on the site so there are no issues
+                    with stopping or pausing. There are
+                    some animations on hover and on focus, but these animations are not flashing or changing color, and
+                    it is for user information purposes. Overall we have followed WCAG guidelines and we believe we have
+                    met the requirements for minimum
+                    WCAG level AA on the whole site.
+                </p>
+                <p>
+                    When it comes to design we have tried to make the site minimalistic and intuitive. There are two
+                    ways to navigate,
+                    and both give visual feedback so that the user knows what functionality to expect. We have also made
+                    sure that no
+                    design feature is necessary for the site to work and be navigated properly.
+                </p>
+            </div>
+        </article>
+    </main>
+    <footer>
+        <p>Made with ❤︎ by studenter TKD</p>
+        <p>&copy; Copyright (2021)</p>
+    </footer>
+    <!--mobile navigation script-->
+    <script>
+        const targetDiv = document.getElementById("dropdownitems");
+        const targetIconOpen = document.getElementById("opendropdown");
+        const targetIconClose = document.getElementById("closedropdown");
+        const btn = document.getElementById("mobilenavigation");
+        btn.onclick = function () {
+            if (targetDiv.style.display !== "none") {
+                targetDiv.style.display = "none";
+                targetIconOpen.style.display = "inline";
+                targetIconClose.style.display = "none";
+            } else {
+                targetDiv.style.display = "block";
+                targetIconOpen.style.display = "none";
+                targetIconClose.style.display = "inline";
+            }
+        };
+    </script>
+    <!--end script-->
+</body>
+
+</html>
